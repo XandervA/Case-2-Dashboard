@@ -23,12 +23,12 @@ import os
 import subprocess
 from kaggle.api.kaggle_api_extended import KaggleApi
 
-kaggle_username = st.secrets['KAGGLE_USERNAME']
-kaggle_key = st.secrets['KAGGLE_KEY']
+kag_username = st.secrets['KAGGLE_USERNAME']
+kag_key = st.secrets['KAGGLE_KEY']
 
 # Authenticate with Kaggle API
 api = KaggleApi()
-api.authenticate(kaggle_username, kaggle_key)
+api.authenticate(kag_username, kag_key)
 
 # Downloading dataset using kaggle API
 command = 'kaggle datasets download -d rohanrao/formula-1-world-championship-1950-2020'
