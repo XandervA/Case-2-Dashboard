@@ -21,6 +21,7 @@ import kaggle
 from zipfile import ZipFile
 import os 
 import subprocess
+from kaggle.api.kaggle_api_extended import KaggleApi
 
 kaggle_username = st.secrets['KAGGLE_USERNAME']
 kaggle_key = st.secrets['KAGGLE_KEY']
