@@ -19,16 +19,15 @@ from dash.dependencies import Input, Output
 import streamlit as st
 import kaggle
 from zipfile import ZipFile
-
-
-# Necessary cause Ipython commands don't function after converting to a .py file
+import os 
 import subprocess
+
+kaggle_username = st.secrets['KAGGLE_USERNAME']
+kaggle_key = st.secrets['KAGGLE_KEY']
 
 # Authenticate with Kaggle API
 api = KaggleApi()
 api.authenticate(kaggle_username, kaggle_key)
-kaggle_username = os.environ.get('KAGGLE_USERNAME')
-kaggle_key = os.environ.get('KAGGLE_KEY')
 
 # Downloading dataset using kaggle API
 command = 'kaggle datasets download -d rohanrao/formula-1-world-championship-1950-2020'
